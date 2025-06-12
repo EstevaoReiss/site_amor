@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Álbum do Amor 💖</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: linear-gradient(to bottom, #ffd1dc, #ffe4ec);
+      color: #d6336c;
+      overflow-x: hidden;
+    }
+    h1, p {
+      text-align: center;
+      animation: fadeIn 2s ease;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-top: 30px;
+    }
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+    .album {
+      width: 90%;
+      max-width: 600px;
+      margin: 40px auto;
+      perspective: 2000px;
+      position: relative;
+    }
+    .page {
+      background: #fff0f6;
+      border: 2px solid #f8a5c2;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      padding: 20px;
+      width: 100%;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: absolute;
+      backface-visibility: hidden;
+      transition: transform 1s;
+    }
+    .album-container {
+      position: relative;
+      height: 400px;
+      z-index: 1;
+    }
+    .page img {
+      max-width: 100%;
+      max-height: 250px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    .buttons {
+      text-align: center;
+      margin-top: 40px;
+      position: relative;
+      z-index: 2;
+    }
+    .buttons button {
+      background-color: #ff85a2;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+    .buttons button:hover {
+      background-color: #ff628f;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Responsividade para iPhone 12 Pro Max e iPhone 13 */
+    @media screen and (max-width: 430px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+        padding: 0 10px;
+      }
+      .page {
+        height: 350px;
+        padding: 15px;
+      }
+      .page img {
+        max-height: 200px;
+      }
+      .buttons button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Nosso Álbum de Amor 💘</h1>
+  <p>
+    Cada página deste álbum conta uma história linda que vivemos juntos. <br>
+    Eu te amo mais a cada capítulo! 💕
+  </p>
+
+  <div class="album">
+    <div class="album-container" id="album">
+      <div class="page" style="z-index: 12;" id="page0">
+        <img src="/assets/foto1momo.jpg" alt="Casal sorridente caminhando de mãos dadas em um parque florido durante o dia transmitindo felicidade e carinho ambiente alegre e romântico">
+        <p>A vida é melhor com voce 💑</p>
+      </div>
+      <div class="page" style="z-index: 11; display: none;" id="page1">
+        <img src="/assets/foto2momo.jpg" alt="Foto 2">
+        <p>Aquele dia incrível no cinema 🌸</p>
+      </div>
+      <div class="page" style="z-index: 10; display: none;" id="page2">
+        <img src="/assets/foto3momo.jpg" alt="Foto 3">
+        <p>Nosso sorriso compartilhado 😊</p>
+      </div>
+      <div class="page" style="z-index: 9; display: none;" id="page3">
+        <img src="/assets/foto4momo.jpg" alt="Foto 4">
+        <p>Uma memória para sempre no meu coração ❤️</p>
+      </div>
+      <div class="page" style="z-index: 8; display: none;" id="page4">
+        <img src="/assets/foto5momo.jpg" alt="Foto 5">
+        <p>Momentos de carinho e paz 🕊️</p>
+      </div>
+      <div class="page" style="z-index: 7; display: none;" id="page5">
+        <img src="/assets/foto6momo.jpg" alt="Foto 6">
+        <p>Nosso amor é como o sol🌟</p>
+      </div>
+      <div class="page" style="z-index: 6; display: none;" id="page6">
+        <img src="/assets/foto7momo.jpg" alt="Foto 7">
+        <p>Te amo infinitamente 💞</p>
+      </div>
+      <div class="page" style="z-index: 5; display: none;" id="page7">
+        <img src="/assets/foto8momo.jpg" alt="Foto 8">
+        <p>Nem as nuvens do ceu ofuscam seu brilho 🏙️</p>
+      </div>
+      <div class="page" style="z-index: 4; display: none;" id="page8">
+        <img src="/assets/foto9momo.jpg" alt="Foto 9">
+        <p>Risadas que aquecem o coração 😄</p>
+      </div>
+      <div class="page" style="z-index: 3; display: none;" id="page9">
+        <img src="/assets/foto10momo.jpg" alt="Foto 10">
+        <p>Teu olhar é meu lar 🥰</p>
+      </div>
+      <div class="page" style="z-index: 2; display: none;" id="page10">
+        <img src="/assets/foto11momo.jpg" alt="Foto 11">
+        <p>Cada instante com você é mágico ✨</p>
+      </div>
+      <div class="page" style="z-index: 1; display: none;" id="page11">
+        <img src="/assets/foto12momo.jpg" alt="Foto 12">
+        <p>Para sempre nós 💍</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button onclick="prevPage()">⟨ Página Anterior</button>
+    <button onclick="nextPage()">Próxima Página ⟩</button>
+  </div>
+
+  <script>
+    let currentPage = 0;
+    const totalPages = 12;
+
+    function showPage(index) {
+      for (let i = 0; i < totalPages; i++) {
+        document.getElementById(`page${i}`).style.display = (i === index) ? 'flex' : 'none';
+      }
+    }
+
+    function nextPage() {
+      if (currentPage < totalPages - 1) {
+        currentPage++;
+        showPage(currentPage);
+      }
+    }
+
+    function prevPage() {
+      if (currentPage > 0) {
+        currentPage--;
+        showPage(currentPage);
+      }
+    }
+  </script>
+</body>
+</html>
