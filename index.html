@@ -79,6 +79,20 @@
     .buttons button:hover {
       background-color: #ff628f;
     }
+    #musicaBtn {
+      background-color: #ffaad2;
+      color: #fff;
+      font-size: 1rem;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    #musicaBtn:hover {
+      background-color: #ff77b4;
+      transform: scale(1.05);
+    }
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -116,52 +130,53 @@
 
   <div class="album">
     <div class="album-container" id="album">
+      <!-- Páginas do álbum -->
       <div class="page" style="z-index: 12;" id="page0">
-        <img src="assets/foto1momo.jpg" alt="Casal sorridente caminhando de mãos dadas em um parque florido durante o dia transmitindo felicidade e carinho ambiente alegre e romântico">
+        <img src="/assets/foto1momo.jpg" alt="Casal sorridente caminhando de mãos dadas em um parque florido durante o dia transmitindo felicidade e carinho ambiente alegre e romântico">
         <p>A vida é melhor com voce 💑</p>
       </div>
       <div class="page" style="z-index: 11; display: none;" id="page1">
-        <img src="assets/foto2momo.jpg" alt="Foto 2">
+        <img src="/assets/foto2momo.jpg" alt="Foto 2">
         <p>Aquele dia incrível no cinema 🌸</p>
       </div>
       <div class="page" style="z-index: 10; display: none;" id="page2">
-        <img src="assets/foto3momo.jpg" alt="Foto 3">
+        <img src="/assets/foto3momo.jpg" alt="Foto 3">
         <p>Nosso sorriso compartilhado 😊</p>
       </div>
       <div class="page" style="z-index: 9; display: none;" id="page3">
-        <img src="assets/foto4momo.jpg" alt="Foto 4">
+        <img src="/assets/foto4momo.jpg" alt="Foto 4">
         <p>Uma memória para sempre no meu coração ❤️</p>
       </div>
       <div class="page" style="z-index: 8; display: none;" id="page4">
-        <img src="assets/foto5momo.jpg" alt="Foto 5">
+        <img src="/assets/foto5momo.jpg" alt="Foto 5">
         <p>Momentos de carinho e paz 🕊️</p>
       </div>
       <div class="page" style="z-index: 7; display: none;" id="page5">
-        <img src="assets/foto6momo.jpg" alt="Foto 6">
+        <img src="/assets/foto6momo.jpg" alt="Foto 6">
         <p>Nosso amor é como o sol🌟</p>
       </div>
       <div class="page" style="z-index: 6; display: none;" id="page6">
-        <img src="assets/foto7momo.jpg" alt="Foto 7">
+        <img src="/assets/foto7momo.jpg" alt="Foto 7">
         <p>Te amo infinitamente 💞</p>
       </div>
       <div class="page" style="z-index: 5; display: none;" id="page7">
-        <img src="assets/foto8momo.jpg" alt="Foto 8">
+        <img src="/assets/foto8momo.jpg" alt="Foto 8">
         <p>Nem as nuvens do ceu ofuscam seu brilho 🏙️</p>
       </div>
       <div class="page" style="z-index: 4; display: none;" id="page8">
-        <img src="assets/foto9momo.jpg" alt="Foto 9">
+        <img src="/assets/foto9momo.jpg" alt="Foto 9">
         <p>Risadas que aquecem o coração 😄</p>
       </div>
       <div class="page" style="z-index: 3; display: none;" id="page9">
-        <img src="assets/foto10momo.jpg" alt="Foto 10">
+        <img src="/assets/foto10momo.jpg" alt="Foto 10">
         <p>Teu olhar é meu lar 🥰</p>
       </div>
       <div class="page" style="z-index: 2; display: none;" id="page10">
-        <img src="assets/foto11momo.jpg" alt="Foto 11">
+        <img src="/assets/foto11momo.jpg" alt="Foto 11">
         <p>Cada instante com você é mágico ✨</p>
       </div>
       <div class="page" style="z-index: 1; display: none;" id="page11">
-        <img src="assets/foto12momo.jpg" alt="Foto 12">
+        <img src="/assets/foto12momo.jpg" alt="Foto 12">
         <p>Para sempre nós 💍</p>
       </div>
     </div>
@@ -170,6 +185,17 @@
   <div class="buttons">
     <button onclick="prevPage()">⟨ Página Anterior</button>
     <button onclick="nextPage()">Próxima Página ⟩</button>
+  </div>
+
+  <!-- Trilha sonora -->
+  <audio id="trilhaSonora" autoplay loop>
+    <source src="/assets/audio.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <!-- Controle de música estilizado -->
+  <div class="buttons">
+    <button id="musicaBtn" onclick="toggleSom()">🎵 Pausar Música</button>
   </div>
 
   <script>
@@ -193,6 +219,18 @@
       if (currentPage > 0) {
         currentPage--;
         showPage(currentPage);
+      }
+    }
+
+    const audio = document.getElementById('trilhaSonora');
+    function toggleSom() {
+      const btn = document.getElementById('musicaBtn');
+      if (audio.paused) {
+        audio.play();
+        btn.innerHTML = '🎵 Pausar Música';
+      } else {
+        audio.pause();
+        btn.innerHTML = '🔇 Continuar Música';
       }
     }
   </script>
